@@ -1,0 +1,7 @@
+{
+  "name": "solid-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

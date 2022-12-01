@@ -1,0 +1,7 @@
+{
+	"appId": "com.example.app",
+	"appName": "solid-mobile",
+	"webDir": "dist",
+	"bundledWebRuntime": false,
+	"plugins": {}
+}

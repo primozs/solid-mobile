@@ -1,0 +1,10 @@
+vite.config.ts
+src/solid.d.ts
+node_modules
+dist
+android
+ios
+public
+postcss.config.js
+*.test.ts
+*.test.tsx
