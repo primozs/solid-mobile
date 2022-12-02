@@ -8,3 +8,4 @@ public
 postcss.config.js
 *.test.ts
 *.test.tsx
+capacitor.config.ts
