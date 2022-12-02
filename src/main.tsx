@@ -20,16 +20,20 @@ import '@ionic/core/css/display.css';
 import './theme/variables.css';
 
 import App from './App';
+import { routes } from './router';
 import { swRegister } from './swUtils';
-import { ionicSolidInit } from '@/ionic/ionic-solid';
+import { IonicSolid } from '@/ionic/ionic-solid';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
-
-ionicSolidInit({
-  mode: 'ios',
-});
 
 swRegister().catch((error) => console.error(error));
 
-render(() => <App />, document.getElementById('app') as HTMLElement);
+render(
+  () => (
+    <IonicSolid config={{ mode: 'ios' }} routes={routes}>
+      <App />
+    </IonicSolid>
+  ),
+  document.getElementById('app') as HTMLElement,
+);
 
 defineCustomElements(window);

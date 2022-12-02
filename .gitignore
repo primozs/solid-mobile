@@ -46,6 +46,7 @@ coverage
 /platforms
 /plugins
 /www
+material
 
 # project
 .env.production

@@ -1,9 +1,10 @@
 import { defineCustomElement } from '@ionic/core/components/ion-button';
-import { ION } from 'solid-js';
-
-defineCustomElement();
+import { ION, onMount } from 'solid-js';
 
 export const IonButton = (props: ION.IonButtonProps) => {
+  onMount(() => {
+    defineCustomElement();
+  });
   // eslint-disable-next-line
   const { children, ...rest } = props;
   return (

@@ -26,9 +26,6 @@ declare module 'solid-js' {
   namespace ION {
     type IonButtonProps = JSX.ButtonHTMLAttributes &
       Partial<Components.IonButton>;
-    // & {
-    //   children?: JSX.Element;
-    // };
   }
   namespace JSX {
     interface IntrinsicElements extends ElementProps<HTMLElementTagNameMap> {

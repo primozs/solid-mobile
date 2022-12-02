@@ -1,16 +1,11 @@
 import type { Component } from 'solid-js';
-import { IonButton } from '@/ionic/IonButton';
-import { Router } from '@solidjs/router';
-import { Layout } from '@/views/Layout';
+import { IonApp, IonRouterOutlet } from '@/ionic';
 
 const App: Component = () => {
   return (
-    <>
-      <Router>
-        <Layout />
-      </Router>
-      <IonButton>Ion button</IonButton>
-    </>
+    <IonApp>
+      <IonRouterOutlet />
+    </IonApp>
   );
 };
 
