@@ -9,8 +9,6 @@ export const routes: RouteDefinition[] = [
     path: '/',
     element: () => <Navigate href="/home" />,
     // element: () => <Navigate href="/tabs/tab1" />,
-    // component: lazy(() => import('@/views/about')),
-    // data: AboutData,
   },
   {
     path: '/home',

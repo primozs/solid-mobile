@@ -1384,6 +1384,34 @@
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.24.51.tgz#645f33fe4e02defe26f2f5c0410e1c094eac7f5f"
   integrity sha512-1P1OROm/rdubP5aFDSZQILU0vrLCJ4fvHt6EoqHEM+2D/G5MK3bIaymUKLit8Js9gbns5UyJnkP/TZROLw4tUA==
 
+"@solid-primitives/immutable@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/immutable/-/immutable-0.1.4.tgz#8876331fc31be3e7250700174d714cc9ee59bd95"
+  integrity sha512-9oLK8ihIjG5FZv74KoXXyKErxgGxGZsdevsIKB0ugTreBBmozHPcYTjoYFL/sHoqs2ZNMlmfNQ3kduvrvKG2RQ==
+  dependencies:
+    "@solid-primitives/utils" "^4.0.0"
+
+"@solid-primitives/refs@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/refs/-/refs-0.3.4.tgz#d9d9d82fcb2f0e7fe49f1fc10089381c60a5c7f7"
+  integrity sha512-XqX5PRCMnCOuLQqTsx3tRYs/oAyQsTXtmkB+tBlYoaqxLrJFBebPRVT/kFWN2Jxb6eZYAXDB5zZejS8nizsd8Q==
+  dependencies:
+    "@solid-primitives/immutable" "^0.1.4"
+    "@solid-primitives/rootless" "^1.2.1"
+    "@solid-primitives/utils" "^4.0.0"
+
+"@solid-primitives/rootless@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/rootless/-/rootless-1.2.1.tgz#17d3a7428ebc3d2c7fbf2ec96093edad3b7ad217"
+  integrity sha512-8RpdyS1e58PQbDjgjpyCh+IGoX3QEs/2LauMfl94eXJ5d/o1y/c6P61z9XqQm+Bx1Otdgx4nbFCoF7HPqa0mwg==
+  dependencies:
+    "@solid-primitives/utils" "^4.0.0"
+
+"@solid-primitives/utils@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/utils/-/utils-4.0.0.tgz#3c592287519dc885290d134f8aff3f0f6f4b4720"
+  integrity sha512-fGsJy8Z8YiwogpiezD7TWjI62UCb0JAHJWdoXWGrggrn4bfToZotKkabiB0IVFMkWVE1ZcrkvZT3bkmqGnK0ng==
+
 "@solidjs/router@^0.5.1":
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@solidjs/router/-/router-0.5.1.tgz#037b4923b4207f9fb6c09579995e98121977173e"

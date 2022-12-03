@@ -1,42 +1,26 @@
-import { onMount, JSX, Ref, splitProps, mergeProps } from 'solid-js';
+import { JSX, Ref, splitProps, mergeProps, createSignal } from 'solid-js';
+import { mergeRefs } from '@solid-primitives/refs';
 
 type Props = {
-  registerIonPage?: (e: HTMLDivElement) => void;
   children?: JSX.Element;
-  ref?: Ref<any>;
+  ref?: Ref<HTMLDivElement>;
 } & JSX.HTMLAttributes<HTMLDivElement>;
 
 export const IonPage = (props: Props) => {
-  let element!: HTMLDivElement;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [element, setElement] = createSignal<HTMLDivElement>();
 
-  const newProps = mergeProps(
-    {
-      registerIonPage: () => {
-        //
-      },
-    },
-    props,
-  );
-  const [local, rest] = splitProps(newProps, [
-    'children',
-    'ref',
-    'class',
-    'registerIonPage',
-  ]);
-
-  onMount(() => {
-    if (typeof local.ref === 'function') {
-      // eslint-disable-next-line
-      local.ref(element);
-    } else if (local.ref) {
-      // eslint-disable-next-line
-      local.ref = element;
-    }
-    if (element) local.registerIonPage(element);
-  });
+  const newProps = mergeProps(props);
+  const [local, rest] = splitProps(newProps, ['children', 'ref', 'class']);
 
   return (
-    <div ref={element} class={cls('ion-page', local.class)} {...rest}>
+    <div
+      ref={mergeRefs((el: HTMLDivElement) => {
+        setElement(el);
+      }, local.ref)}
+      class={cls('ion-page', local.class)}
+      {...rest}
+    >
       {local.children}
     </div>
   );

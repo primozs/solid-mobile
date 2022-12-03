@@ -1,5 +1,5 @@
 import { IonicConfig, initialize } from '@ionic/core/components';
-import { ParentProps } from 'solid-js';
+import { ParentProps, createEffect } from 'solid-js';
 import { RouteDefinition, Router, useRoutes } from '@solidjs/router';
 import { routes } from '@/router';
 
@@ -25,8 +25,9 @@ type Props = ParentProps<{
 }>;
 
 export const IonicSolid = (props: Props) => {
-  // eslint-disable-next-line
-  ionicSolidInit(props.config);
+  createEffect(() => {
+    ionicSolidInit(props.config);
+  });
 
   const full_routes: RouteDefinition[] = [
     {

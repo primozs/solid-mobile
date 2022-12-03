@@ -1,25 +1,39 @@
+import {
+  IonPage,
+  IonToolbar,
+  IonHeader,
+  IonContent,
+  IonTitle,
+  IonLabel,
+} from '@/ionic';
 import { createEffect, Suspense } from 'solid-js';
 import { useRouteData } from '@solidjs/router';
 
 export default function About() {
-  const name = useRouteData<Function>();
+  const name = useRouteData<() => () => string>();
 
   createEffect(() => {
     console.log(name());
   });
 
   return (
-    <section>
-      <h1>About</h1>
+    <IonPage>
+      <IonHeader translucent={false}>
+        <IonToolbar>
+          <IonTitle>About</IonTitle>
+        </IonToolbar>
+      </IonHeader>
 
-      <p>A page all about this website.</p>
-
-      <p>
-        <span>We love</span>
-        <Suspense fallback={<span>...</span>}>
-          <span>&nbsp;{name()}</span>
-        </Suspense>
-      </p>
-    </section>
+      <IonContent fullscreen={true} class="ion-padding">
+        <IonLabel>
+          <h1>
+            We love
+            <Suspense fallback={<span>...</span>}>
+              <>&nbsp;{name()}</>
+            </Suspense>
+          </h1>
+        </IonLabel>
+      </IonContent>
+    </IonPage>
   );
 }

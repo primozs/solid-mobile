@@ -13,14 +13,14 @@ export const getPlatforms = () => {
   return getPlatformsCore(window);
 };
 
-/* eslint-disable */
 export const getConfig = (): CoreConfig | null => {
   if (typeof (window as any) !== 'undefined') {
-    const Ionic = (window as any).Ionic;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const Ionic = (window as any).Ionic as Record<string, unknown>;
     if (Ionic && Ionic.config) {
-      return Ionic.config;
+      const cnf = Ionic.config as CoreConfig;
+      return cnf;
     }
   }
   return null;
 };
-/* eslint-enable */

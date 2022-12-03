@@ -83,6 +83,7 @@ export type {
 } from '@ionic/core/components';
 
 export * from './proxies';
+export * from './routing-proxies';
 
 // Custom Components
 export { IonApp } from './IonApp';

@@ -29,7 +29,7 @@ swRegister().catch((error) => console.error(error));
 
 render(
   () => (
-    <IonicSolid config={{ mode: 'ios' }} routes={routes}>
+    <IonicSolid config={{ mode: 'md' }} routes={routes}>
       <App />
     </IonicSolid>
   ),

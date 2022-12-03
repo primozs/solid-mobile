@@ -1,4 +1,4 @@
-import { Ref, JSX, splitProps, onMount } from 'solid-js';
+import { Ref, JSX, splitProps } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
 
 // example how to create element similar like in react
@@ -33,20 +33,9 @@ export const createSolidComponent = <
   const SolidComponent = (
     props: StencilSolidExternalProps<PropType, ElementType>,
   ) => {
-    let componentEl!: ElementType;
     const [local, rest] = splitProps(props, ['children', 'ref']);
-
-    onMount(() => {
-      if (typeof local.ref === 'function') {
-        local.ref(componentEl);
-      } else if (props.ref) {
-        // eslint-disable-next-line
-        local.ref = componentEl;
-      }
-    });
-
     return (
-      <Dynamic component={tagName} ref={componentEl} {...rest}>
+      <Dynamic component={tagName} ref={local.ref} {...rest}>
         {local.children}
       </Dynamic>
     );
